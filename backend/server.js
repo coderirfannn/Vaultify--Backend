@@ -7,6 +7,7 @@ import connectDB from "./config/db.js";
 // route imports
 import authRoutes from "./routes/authRoutes.js";
 import billRoutes from "./routes/billRoutes.js";
+import reminderRoutes from "./routes/reminderRoutes.js"; // ✅ new
 
 // env config
 dotenv.config();
@@ -25,6 +26,7 @@ connectDB();
 // routes
 app.use("/api/auth", authRoutes);
 app.use("/api/bills", billRoutes);
+app.use("/api/reminders", reminderRoutes); // ✅ added
 
 // default route
 app.get("/", (req, res) => {
